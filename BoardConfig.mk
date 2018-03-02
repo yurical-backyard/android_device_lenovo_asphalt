@@ -6,6 +6,9 @@
 
 DEVICE_PATH := device/lenovo/asphalt
 
+# Bootloader
+TARGET_NO_BOOTLOADER := true
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/framework_compatibility_matrix_lenovo.xml
