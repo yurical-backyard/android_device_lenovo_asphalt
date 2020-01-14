@@ -11,6 +11,9 @@ PRODUCT_SOONG_NAMESPACES += \
 # Enforce generic ramdisk allow list
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
+# Enable virtual A/B OTA
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/lenovo/asphalt/asphalt-vendor.mk)
 
