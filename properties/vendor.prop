@@ -5,6 +5,7 @@ ro.vendor.beluga.s=0x900
 ro.vendor.beluga.t=0x240
 
 # Bluetooth
+bluetooth.device.default_name=Legion Tab Y700
 bluetooth.hardware.power.idle_cur_ma=6
 bluetooth.hardware.power.operating_voltage_mv=3700
 bluetooth.hardware.power.rx_cur_ma=28
