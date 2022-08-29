@@ -65,6 +65,9 @@ function blob_fixup() {
         vendor/bin/hw/dolbycodec2 | vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service | vendor/bin/hw/vendor.dolby.media.c2@1.0-service)
             "${PATCHELF}" --add-needed "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/bin/hw/vendor.qti.hardware.vibrator.service | vendor/lib64/vendor.qti.hardware.vibrator.impl.so)
+            "$PATCHELF" --replace-needed "android.hardware.vibrator-V2-ndk_platform.so" "android.hardware.vibrator-V2-ndk.so" "$2"
+            ;;
         vendor/lib64/hw/audio.primary.taro.so)
             "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
             ;;
