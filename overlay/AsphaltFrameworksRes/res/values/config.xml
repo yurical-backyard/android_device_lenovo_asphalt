@@ -235,6 +235,13 @@
          experience while the device is non-interactive. -->
     <bool name="config_emergencyGestureEnabled">false</bool>
 
+    <!-- The device supports freeform window management. Windows have title bars and can be moved
+         and resized. If you set this to true, you also need to add
+         PackageManager.FEATURE_FREEFORM_WINDOW_MANAGEMENT feature to your device specification.
+         The duplication is necessary, because this information is used before the features are
+         available to the system.-->
+    <bool name="config_freeformWindowManagement">true</bool>
+
     <!-- Boolean indicating whether all CB messages should be disabled on this device. This config
          is intended to be used by OEMs who need to disable CB messages for regulatory requirements,
          (e.g. the device is a tablet in a country where tablets should not receive CB messages) -->
