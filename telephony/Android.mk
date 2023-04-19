@@ -14,6 +14,7 @@ LOCAL_OVERRIDES_PACKAGES := \
    CarrierServices \
    com.google.android.dialer.support \
    Contacts \
+   DevicePersonalizationPrebuiltPixel2020 \
    Dialer \
    GoogleContacts \
    GoogleDialer \
