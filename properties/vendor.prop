@@ -80,6 +80,7 @@ external_storage.projid.enabled=1
 external_storage.sdcardfs.enabled=0
 
 # USB
+ro.usb.uvc.enabled=true
 sys.usb.mtp.batchcancel=1
 vendor.usb.diag.func.name=ffs
 vendor.usb.dpl.inst.name=dpl
