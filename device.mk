@@ -74,6 +74,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.odm.rc
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    libkeymaster_messages.vendor
+
 # Keymint
 PRODUCT_PACKAGES += \
     android.hardware.security.rkp-V3-ndk.vendor
