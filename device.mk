@@ -89,6 +89,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AsphaltFrameworksResAOSPA
 
+# Telephony
+PRODUCT_PACKAGES += \
+    RemoveTelephonyPackages
+
 # Vibrator
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
