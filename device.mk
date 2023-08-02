@@ -56,6 +56,10 @@ PRODUCT_PACKAGES += \
     ueventd.odm.rc \
     ueventd.qcom.rc
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # Overlays
 PRODUCT_PACKAGES += \
     AsphaltFrameworksRes \

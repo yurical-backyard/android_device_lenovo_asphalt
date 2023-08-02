@@ -125,6 +125,8 @@ on boot
     chmod 0660 /sys/devices/platform/soc/980000.i2c/i2c-0/0-0062/trusted_touch_event
     chown system /sys/devices/system/cpu/hyp_core_ctl/enable
     chown system /sys/devices/system/cpu/hyp_core_ctl/hcc_min_freq
+    chown system system /sys/class/qcom-battery/batt_charge_en
+    chmod 0660 /sys/class/qcom-battery/batt_charge_en
     #USB controller configuration
     setprop vendor.usb.controller a600000.dwc3
 
