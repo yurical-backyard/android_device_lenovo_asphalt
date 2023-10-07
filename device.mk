@@ -99,7 +99,8 @@ endif
 # Overlays
 PRODUCT_PACKAGES += \
     AsphaltFrameworksRes \
-    AsphaltSettings
+    AsphaltSettings \
+    AsphaltSettingsProvider
 
 PRODUCT_PACKAGES += \
     AsphaltFrameworksResAOSPA
