@@ -74,6 +74,10 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.odm.rc
 
+# Keymint
+PRODUCT_PACKAGES += \
+    android.hardware.security.rkp-V3-ndk.vendor
+
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
