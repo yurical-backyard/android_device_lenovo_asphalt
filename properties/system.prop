@@ -6,9 +6,6 @@ use.voice.path.for.pcm.voip=true
 # Bluetooth
 persist.vendor.btstack.aac_frm_ctl.enabled=true
 
-# Charger
-ro.charger.enable_suspend=1
-
 # FUSE
 persist.fuse_sdcard=true
 
