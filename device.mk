@@ -64,6 +64,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AsphaltFrameworksResAOSPA
 
+# Vibrator
+PRODUCT_COPY_FILES += \
+    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-V2-ndk_platform.vendor
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
