@@ -45,6 +45,9 @@ PRODUCT_COPY_FILES += \
 # Characteristics
 PRODUCT_CHARACTERISTICS := tablet
 
+# Display
+TARGET_SDMCORE_HAS_IS_DISPLAY_HW_AVAILABLE_FUNC := false
+
 # Init
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
