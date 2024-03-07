@@ -85,6 +85,7 @@ on fs
     chmod 0771 /mnt/vendor/persist
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/data 0700 system system
+    mkdir /mnt/vendor/persist/audio 0777 audio audio
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -203,3 +204,32 @@ on early-boot && property:persist.vendor.pcie.boot_option=*
 on property:sys.boot_completed=1
     enable vendor.qvirtmgr
     start  vendor.qvirtmgr
+    # Imported from inint.lenovo.rc
+    chmod 0444 /dev/lenovo_penraw
+
+#add for online lenovocust
+on post-fs-data
+    chown system system /lenovocust
+    chmod 0777 /lenovocust
+
+on early-init
+    mkdir /lenovocust 0777 system system
+
+on fs
+    wait /dev/block/bootdevice/by-name/lenovocust
+    mount ext4 /dev/block/bootdevice/by-name/lenovocust /lenovocust nosuid nodev barrier=1
+    restorecon_recursive   /lenovocust
+
+# Add for mic1 to speaker loopback test
+service tinyhostless_loop /vendor/bin/agmhostless -D 100 -P 103 -C 104 -p 1024 -n 4 -c 1 -r 48000 -T 200   -i 1 -o 2
+    user root
+    group root audio system
+    disabled
+    oneshot
+
+# Add for camera XTS test
+on property:vendor.lenovocamera.packagename.cts=*
+    setprop vendor.camera.packagename.cts ${vendor.lenovocamera.packagename.cts}
+
+on property:vendor.lenovocamera.packagename.zui=*
+    setprop vendor.camera.packagename.zui ${vendor.lenovocamera.packagename.zui}
