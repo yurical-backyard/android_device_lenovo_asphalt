@@ -6,6 +6,10 @@
 
 DEVICE_PATH := device/lenovo/asphalt
 
+# HIDL
+DEVICE_MANIFEST_FILE += \
+    $(DEVICE_PATH)/vintf/manifest_cape.xml
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
