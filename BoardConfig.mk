@@ -5,3 +5,6 @@
 #
 
 DEVICE_PATH := device/lenovo/asphalt
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
