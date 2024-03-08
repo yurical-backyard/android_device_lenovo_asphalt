@@ -7,6 +7,9 @@
 DEVICE_PATH := device/lenovo/asphalt
 
 # HIDL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    $(DEVICE_PATH)/vintf/framework_compatibility_matrix_lenovo.xml
+
 DEVICE_MANIFEST_FILE += \
     $(DEVICE_PATH)/vintf/manifest_cape.xml
 
