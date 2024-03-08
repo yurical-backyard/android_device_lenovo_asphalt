@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2024 Paranoid Android
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Flag indicating whether we should enable the automatic brightness.
+         Software implementation will be used if config_hardware_auto_brightness_available is not set -->
+    <bool name="config_automatic_brightness_available">true</bool>
+
+    <!-- Minimum color temperature, in Kelvin, supported by Night display. -->
+    <integer name="config_nightDisplayColorTemperatureMin">3000</integer>
+
+    <!-- Default color temperature, in Kelvin, to tint the screen when Night display is
+         activated. -->
+    <integer name="config_nightDisplayColorTemperatureDefault">4500</integer>
+
+    <!-- Maximum color temperature, in Kelvin, supported by Night display. -->
+    <integer name="config_nightDisplayColorTemperatureMax">6000</integer>
+
+    <string-array name="config_nightDisplayColorTemperatureCoefficientsNative">
+         <!-- R a-coefficient --> <item>0.0</item>
+         <!-- R b-coefficient --> <item>0.0</item>
+         <!-- R y-intercept --> <item>1.0</item>
+         <!-- G a-coefficient --> <item>-0.00000000962353339</item>
+         <!-- G b-coefficient --> <item>0.000153045476</item>
+         <!-- G y-intercept --> <item>0.390782778</item>
+         <!-- B a-coefficient --> <item>-0.0000000189359041</item>
+         <!-- B b-coefficient --> <item>0.000302412211</item>
+         <!-- B y-intercept --> <item>-0.338650895</item>
+    </string-array>
+
+    <string-array name="config_nightDisplayColorTemperatureCoefficients">
+         <!-- R a-coefficient --> <item>0.0</item>
+         <!-- R b-coefficient --> <item>0.0</item>
+         <!-- R y-intercept --> <item>1.0</item>
+         <!-- G a-coefficient --> <item>-0.00000000962353339</item>
+         <!-- G b-coefficient --> <item>0.000153045476</item>
+         <!-- G y-intercept --> <item>0.390782778</item>
+         <!-- B a-coefficient --> <item>-0.0000000189359041</item>
+         <!-- B b-coefficient --> <item>0.000302412211</item>
+         <!-- B y-intercept --> <item>-0.338650895</item>
+    </string-array>
+
+    <!-- Note: This setting is deprecated, please use
+         config_screenBrightnessSettingMinimumFloat instead -->
+    <integer name="config_screenBrightnessSettingMinimum">2</integer>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">4000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
+
+    <!-- Array of light sensor lux values to define our levels for auto backlight brightness support.
+         The N entries of this array define N + 1 control points as follows:
+         (1-based arrays)
+
+         Point 1:            (0, value[1]):             lux <= 0
+         Point 2:     (level[1], value[2]):  0        < lux <= level[1]
+         Point 3:     (level[2], value[3]):  level[2] < lux <= level[3]
+         ...
+         Point N+1: (level[N], value[N+1]):  level[N] < lux
+
+         The control points must be strictly increasing.  Each control point
+         corresponds to an entry in the brightness backlight values arrays.
+         For example, if lux == level[1] (first element of the levels array)
+         then the brightness will be determined by value[2] (second element
+         of the brightness values array).
+
+         Spline interpolation is used to determine the auto-brightness
+         backlight values for lux levels between these control points.
+
+         Must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLevels">
+        <item>10</item>
+        <item>60</item>
+        <item>210</item>
+        <item>350</item>
+        <item>420</item>
+        <item>1000</item>
+        <item>1001</item>
+    </integer-array>
+
+    <!-- Array of output values for LCD backlight corresponding to the lux values
+         in the config_autoBrightnessLevels array.  This array should have size one greater
+         than the size of the config_autoBrightnessLevels array.
+         The brightness values must be between 0 and 255 and be non-decreasing.
+         This must be overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>77</item>
+        <item>77</item>
+        <item>120</item>
+        <item>144</item>
+        <item>198</item>
+        <item>230</item>
+        <item>247</item>
+        <item>255</item>
+    </integer-array>
+
+    <!-- Array of desired screen brightness in nits corresponding to the lux values
+         in the config_autoBrightnessLevels array. As with config_screenBrightnessMinimumNits and
+         config_screenBrightnessMaximumNits, the display brightness is defined as the measured
+         brightness of an all-white image.
+
+         If this is defined then:
+            - config_autoBrightnessLcdBacklightValues should not be defined
+            - config_screenBrightnessNits must be defined
+            - config_screenBrightnessBacklight must be defined
+
+         This array should have size one greater than the size of the config_autoBrightnessLevels
+         array. The brightness values must be non-negative and non-decreasing. This must be
+         overridden in platform specific overlays -->
+    <integer-array name="config_autoBrightnessDisplayValuesNits">
+        <item>40</item>
+        <item>40</item>
+        <item>100</item>
+        <item>150</item>
+        <item>300</item>
+        <item>420</item>
+        <item>490</item>
+        <item>500</item>
+    </integer-array>
+
+    <!-- An array describing the screen's backlight values corresponding to the brightness
+         values in the config_screenBrightnessNits array.
+
+         This array should be equal in size to config_screenBrightnessBacklight. -->
+    <integer-array name="config_screenBrightnessBacklight">
+        <item>0</item>
+        <item>20</item>
+        <item>51</item>
+        <item>77</item>
+        <item>153</item>
+        <item>214</item>
+        <item>250</item>
+        <item>255</item>
+    </integer-array>
+
+    <!-- An array of floats describing the screen brightness in nits corresponding to the backlight
+         values in the config_screenBrightnessBacklight array.  On OLED displays these  values
+         should be measured with an all white image while the display is in the fully on state.
+         Note that this value should *not* reflect the maximum brightness value for any high
+         brightness modes but only the maximum brightness value obtainable in a sustainable manner.
+
+         This array should be equal in size to config_screenBrightnessBacklight -->
+    <integer-array name="config_screenBrightnessNits">
+        <item>0</item>
+        <item>40</item>
+        <item>100</item>
+        <item>150</item>
+        <item>300</item>
+        <item>420</item>
+        <item>490</item>
+        <item>500</item>
+    </integer-array>
+
+    <!-- Flag indicating whether the current device is "voice capable".
+         If true, this means that the device supports circuit-switched
+         (i.e. voice) phone calls over the telephony network, and is
+         allowed to display the in-call UI while a cellular voice call is
+         active.  This can be overridden to false for "data only" devices
+         which can't make voice calls and don't support any in-call UI.
+
+         Note: this flag is subtly different from the
+         PackageManager.FEATURE_TELEPHONY system feature, which is
+         available on *any* device with a telephony radio, even if the
+         device is data-only. -->
+     <bool name="config_voice_capable">false</bool>
+
+    <!-- Flag indicating whether the current device allows sms service.
+         If true, this means that the device supports both sending and
+         receiving sms via the telephony network.
+         This can be overridden to false for "data only" devices
+         which can't send and receive sms message.
+
+         Note: Disable SMS also disable voicemail waiting sms,
+               cell broadcasting sms, and MMS. -->
+     <bool name="config_sms_capable">false</bool>
+
+    <!-- Flag indicating whether the current device allows data.
+         If true, this means that the device supports data connectivity through
+         the telephony network.
+         This can be overridden to false for devices that support voice and/or sms . -->
+    <bool name="config_mobile_data_capable">false</bool>
+</resources>

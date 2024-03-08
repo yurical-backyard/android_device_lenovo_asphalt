@@ -56,6 +56,10 @@ PRODUCT_PACKAGES += \
     ueventd.odm.rc \
     ueventd.qcom.rc
 
+# Overlays
+PRODUCT_PACKAGES += \
+    AsphaltFrameworksRes
+
 # Wi-Fi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/qca6490/WCNSS_qcom_cfg.ini
