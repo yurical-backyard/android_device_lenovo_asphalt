@@ -1,0 +1,1 @@
+genfscon proc /gesture_control u:object_r:proc_gesture:s0
