@@ -59,32 +59,7 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib/libsample1.so)
-            sed -i 's|/data/misc/sample1|/data/misc/sample2|g' "${2}"
-            ;;
-        vendor/lib64/libsample2.so)
-            "${PATCHELF}" --remove-needed "libsample3.so" "${2}"
-            "${PATCHELF}" --add-needed "libsample4.so" "${2}"
-            ;;
-        vendor/lib/libsample5.so)
-            "${PATCHELF}" --replace-needed "libsample6.so" "libsample7.so" "${2}"
-            ;;
-        vendor/lib/libsample7.so)
-            "${PATCHELF}" --set-soname "libsample7.so" "${2}"
-            ;;
     esac
-}
-
-function prepare_firmware() {
-    if [ "${SRC}" != "adb" ]; then
-        local STAR="${ANDROID_ROOT}"/lineage/scripts/motorola/star.sh
-        for IMAGE in bootloader radio; do
-            if [ -f "${SRC}/${IMAGE}.img" ]; then
-                echo "Extracting Motorola star image ${SRC}/${IMAGE}.img"
-                sh "${STAR}" "${SRC}/${IMAGE}.img" "${SRC}"
-            fi
-        done
-    fi
 }
 
 # Initialize the helper
@@ -92,10 +67,6 @@ setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false "${CLEAN_VENDOR}"
 
 if [ -z "${ONLY_FIRMWARE}" ]; then
     extract "${MY_DIR}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
-fi
-
-if [ -z "${SECTION}" ]; then
-    extract_firmware "${MY_DIR}/proprietary-firmware.txt" "${SRC}"
 fi
 
 "${MY_DIR}/setup-makefiles.sh"
