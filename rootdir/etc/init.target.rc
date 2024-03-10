@@ -127,6 +127,36 @@ on boot
     chown system /sys/devices/system/cpu/hyp_core_ctl/hcc_min_freq
     chown system system /sys/class/qcom-battery/batt_charge_en
     chmod 0660 /sys/class/qcom-battery/batt_charge_en
+    chown system system /sys/class/leds/vibrator_l/activate
+    chmod 0660 /sys/class/leds/vibrator_l/activate
+    chown system system /sys/class/leds/vibrator_l/activate_mode
+    chmod 0660 /sys/class/leds/vibrator_l/activate_mode
+    chown system system /sys/class/leds/vibrator_l/index
+    chmod 0660 /sys/class/leds/vibrator_l/index
+    chown system system /sys/class/leds/vibrator_l/duration
+    chmod 0660 /sys/class/leds/vibrator_l/duration
+    chown system system /sys/class/leds/vibrator_l/gain
+    chmod 0660 /sys/class/leds/vibrator_l/gain
+    chown system system /sys/class/leds/vibrator_l/double
+    chmod 0660 /sys/class/leds/vibrator_l/double
+    chown system system /sys/class/leds/vibrator_r/activate
+    chmod 0660 /sys/class/leds/vibrator_r/activate
+    chown system system /sys/class/leds/vibrator_r/activate_mode
+    chmod 0660 /sys/class/leds/vibrator_r/activate_mode
+    chown system system /sys/class/leds/vibrator_r/index
+    chmod 0660 /sys/class/leds/vibrator_r/index
+    chown system system /sys/class/leds/vibrator_r/duration
+    chmod 0660 /sys/class/leds/vibrator_r/duration
+    chown system system /sys/class/leds/vibrator_r/gain
+    chmod 0660 /sys/class/leds/vibrator_r/gain
+    chown system system /sys/class/leds/vibrator_r/double
+    chmod 0660 /sys/class/leds/vibrator_r/double
+    chown system system /sys/class/leds/vibrator_r/dual_duration
+    chmod 0660 /sys/class/leds/vibrator_r/dual_duration
+    chown system system /sys/class/leds/vibrator_r/dual_index
+    chmod 0660 /sys/class/leds/vibrator_r/dual_index
+    chown system system /sys/class/leds/vibrator_r/dual_activate
+    chmod 0660 /sys/class/leds/vibrator_r/dual_activate
     #USB controller configuration
     setprop vendor.usb.controller a600000.dwc3
 
