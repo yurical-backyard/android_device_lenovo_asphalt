@@ -58,7 +58,8 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AsphaltFrameworksRes
+    AsphaltFrameworksRes \
+    AsphaltSettings
 
 # Wi-Fi
 PRODUCT_COPY_FILES += \
