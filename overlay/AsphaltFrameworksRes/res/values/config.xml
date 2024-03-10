@@ -157,6 +157,12 @@
         <item>500</item>
     </integer-array>
 
+    <!-- Whether the geolocation time zone detection feature is enabled. Setting this to false means
+         the feature cannot be used. Setting this to true means system server components can be
+         tested and location time zone detection may be used if other configuration allows (see
+         location time zone provider configuration settings below). -->
+    <bool name="config_enableGeolocationTimeZoneDetection">false</bool>
+
     <!-- Flag indicating whether the current device is "voice capable".
          If true, this means that the device supports circuit-switched
          (i.e. voice) phone calls over the telephony network, and is
@@ -185,4 +191,26 @@
          the telephony network.
          This can be overridden to false for devices that support voice and/or sms . -->
     <bool name="config_mobile_data_capable">false</bool>
+
+    <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
+    <bool name="config_cellBroadcastAppLinks">false</bool>
+
+    <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
+         is not necessarily the same as the number of phones/logical modems supported by the device.
+         For example, a multi-sim device can have 2 phones/logical modems, but 3 physical slots,
+         or a single SIM device can have 1 phones/logical modems, but 2 physical slots (one eSIM
+         and one pSIM) -->
+    <integer name="config_num_physical_slots">0</integer>
+
+    <!-- Flag indicating device support for EAP SIM, AKA, AKA' -->
+    <bool name="config_eap_sim_based_auth_supported">false</bool>
+
+    <!-- Allow the gesture to quick tap the power button multiple times to start the emergency sos
+         experience while the device is non-interactive. -->
+    <bool name="config_emergencyGestureEnabled">false</bool>
+
+    <!-- Boolean indicating whether all CB messages should be disabled on this device. This config
+         is intended to be used by OEMs who need to disable CB messages for regulatory requirements,
+         (e.g. the device is a tablet in a country where tablets should not receive CB messages) -->
+    <bool translatable="false" name="config_disable_all_cb_messages">true</bool>
 </resources>
