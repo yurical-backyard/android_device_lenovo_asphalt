@@ -65,12 +65,14 @@ TARGET_SDMCORE_HAS_IS_DISPLAY_HW_AVAILABLE_FUNC := false
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
+
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.recovery.qcom.rc \
     init.target.rc \
-    ueventd.odm.rc \
-    ueventd.qcom.rc
+    ueventd.odm.rc
 
 # Lineage Health
 PRODUCT_PACKAGES += \
