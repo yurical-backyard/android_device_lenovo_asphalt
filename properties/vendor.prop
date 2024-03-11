@@ -1,0 +1,85 @@
+# Beluga
+ro.vendor.beluga.c=0x4800
+ro.vendor.beluga.p=0x3
+ro.vendor.beluga.s=0x900
+ro.vendor.beluga.t=0x240
+
+# Bluetooth
+bluetooth.hardware.power.idle_cur_ma=6
+bluetooth.hardware.power.operating_voltage_mv=3700
+bluetooth.hardware.power.rx_cur_ma=28
+bluetooth.hardware.power.tx_cur_ma=36
+persist.sys.fflag.override.settings_bluetooth_hearing_aid=true
+persist.vendor.bluetooth.modem_nv_support=true
+persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false
+persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptiver2
+persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true
+persist.vendor.qcom.bluetooth.aptxadaptiver2_1_support=true
+persist.vendor.qcom.bluetooth.scram.enabled=false
+persist.vendor.qcom.bluetooth.twsp_state.enabled=false
+persist.vendor.service.bdroid.soc.alwayson=true
+ro.vendor.bluetooth.csip_qti=true
+vendor.hw.fm.init=0
+
+# Boot
+sys.vendor.shutdown.waittime=500
+
+# Camera
+ro.camera.enableCamera1MaxZsl=1
+
+# Dalvik
+dalvik.vm.heapgrowthlimit=256m
+
+# DPM
+persist.vendor.dpm.vndr.feature=11
+persist.vendor.dpm.vndr.halservice.enable=1
+persist.vendor.dpm.vndr.idletimer.mode=default
+
+# DRM
+drm.service.enabled=true
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Gatekeeper
+vendor.gatekeeper.disable_spu=true
+
+# Graphics
+debug.sf.enable_hwc_vds=0
+graphics.gpu.profiler.support=true
+persist.sys.sf.color_mode=0
+ro.surface_flinger.set_touch_timer_ms=2000
+vendor.display.disable_hw_recovery_dump=1
+vendor.display.disable_offline_rotator=1
+vendor.display.idle_time=0
+vendor.display.vds_allow_hwc=1
+
+# Incremental FS
+ro.incremental.enable=yes
+
+# Lenovo
+persist.sys.lenovo.btpen.name=Lenovo Tab Pen Plus
+ro.lenovo.pen.event.name=NVTCapacitivePen
+ro.lenovo.pen_info=0x617F:0x17EF:Lenovo Tab Pen Plus
+
+# Media
+debug.stagefright.c2inputsurface=-1
+debug.stagefright.ccodec=4
+debug.stagefright.omx_default_rank=0
+ro.mediaserver.64b.enable=true
+ro.vendor.dolby.dax.version=DAX3_3.8.5.20_r1
+
+# Storage
+external_storage.casefold.enabled=1
+external_storage.projid.enabled=1
+external_storage.sdcardfs.enabled=0
+
+# USB
+sys.usb.mtp.batchcancel=1
+vendor.usb.diag.func.name=ffs
+vendor.usb.dpl.inst.name=dpl
+vendor.usb.qdss.inst.name=qdss_sw
+vendor.usb.rndis.func.name=gsi
+vendor.usb.use_ffs_mtp=1
+vendor.usb.use_gadget_hal=1

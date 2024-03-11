@@ -1,0 +1,42 @@
+# Audio
+ro.audio.relative_volume=true
+tunnel.audio.encode=true
+use.voice.path.for.pcm.voip=true
+
+# Bluetooth
+persist.vendor.btstack.aac_frm_ctl.enabled=true
+
+# Charger
+ro.charger.enable_suspend=1
+
+# FUSE
+persist.fuse_sdcard=true
+
+# Graphics
+debug.sf.enable_hwc_vds=1
+debug.sf.set_idle_timer_ms=0
+dev.pm.dyn_samplingrate=1
+persist.sys.force_sw_gles=1
+ro.surface_flinger.display_update_imminent_timeout_ms=1000
+ro.surface_flinger.set_idle_timer_ms=1000
+ro.surface_flinger.set_pen_timer_ms=10000
+ro.surface_flinger.set_refresh_timer_ms=200
+ro.surface_flinger.set_touch_timer_ms=2000
+
+# Media
+persist.mm.enable.prefetch=true
+qcom.hw.aac.encoder=true
+ro.media.recorder-max-base-layer-fps=60
+
+# Sensors
+persist.vendor.sensors.enable.mag_filter=true
+
+# TimeService
+persist.timed.enable=true
+
+# Wi-Fi
+config.disable_rtt=true
+
+# Wi-Fi Display
+persist.debug.wfd.enable=1
+persist.sys.wfd.virtual=0

@@ -1,0 +1,5 @@
+# Audio
+audio.offload.min.duration.secs=30
+audio.sys.mute.latency.factor=2
+audio.sys.routing.latency=0
+media.stagefright.audio.deep=false
