@@ -74,6 +74,9 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.odm.rc
 
+# Kernel Binary
+KERNEL_PREBUILT_DIR := device/lenovo/asphalt-kernel
+
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor
