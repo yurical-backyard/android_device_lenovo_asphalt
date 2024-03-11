@@ -27,6 +27,11 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_BOOTLOADER_BOARD_NAME := taro
 TARGET_NO_BOOTLOADER := true
 
+# Bringup
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_DUP_SYSPROP := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/vintf/framework_compatibility_matrix_lenovo.xml
@@ -43,6 +48,8 @@ BOARD_BOOTCONFIG := \
 BOARD_KERNEL_CMDLINE := \
     disable_dma32=on \
     msm_geni_serial.con_enabled=0
+
+BOARD_BOOTCONFIG += androidboot.selinux=permissive
 
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
