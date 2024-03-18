@@ -1,2 +1,6 @@
 genfscon proc /gesture_control u:object_r:proc_gesture:s0
 genfscon sysfs /class/qcom-battery u:object_r:vendor_sysfs_battery_supply:s0
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-6/6-005a/leds/vibrator_l u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-6/6-005a/leds/vibrator_r u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/soc/a98000.i2c/i2c-7/7-005a/leds/vibrator_l u:object_r:sysfs_vibrator:s0
+genfscon sysfs /devices/platform/soc/a98000.i2c/i2c-7/7-005a/leds/vibrator_r u:object_r:sysfs_vibrator:s0
