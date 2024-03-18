@@ -1,2 +1,3 @@
 /dev/aw8697_haptic_l u:object_r:aac_richtap_device:s0
 /dev/aw8697_haptic_r u:object_r:aac_richtap_device:s0
+/dev/lenovo_sys_temp u:object_r:thermal_device:s0
